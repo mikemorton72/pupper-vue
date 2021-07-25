@@ -5,6 +5,7 @@
     <p> Name: {{ puppy.name }} </p>
     <p> Age (years): {{ puppy.age }} </p>
     <p> Breed: {{ puppy.breed }} </p>
+    <a v-bind:href="`/puppies/${puppy.id}/edit`">Edit</a>
     <hr />
   </div>
 </template>
@@ -20,7 +21,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      puppy: [],
+      puppy: {},
     };
   },
   created: function () {

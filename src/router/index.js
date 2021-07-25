@@ -5,6 +5,7 @@ import About from '../views/About.vue';
 import PuppiesIndex from '../views/PuppiesIndex.vue';
 import PuppiesShow from '../views/PuppiesShow.vue';
 import PuppiesCreate from '../views/PuppiesCreate.vue';
+import PuppiesEdit from '../views/PuppiesEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/puppies/:id',
     name: 'Puppies Show',
     component: PuppiesShow
+  },
+  {
+    path: '/puppies/:id/edit',
+    name: 'Puppies Edit',
+    component: PuppiesEdit
   }
 
 ];
