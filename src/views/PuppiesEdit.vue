@@ -17,8 +17,12 @@
         <label>Breed: </label>
         <input type="text" v-model="editPuppy.breed" />
       </div>
+      <br />
       <input type="submit" value="Submit" />
     </form>
+    <br />
+    <br />
+    <button v-on:click="puppiesDestroy">Delete</button>
   </div>
 </template>
 
@@ -53,8 +57,13 @@ export default {
           this.$router.push(`/puppies/${this.editPuppy.id}`);
         })
         .catch((errors) => {
-          this.errors = errors.respone.data.errors;
+          this.errors = errors.response.data.errors;
         });
+    },
+    puppiesDestroy: function () {
+      axios.delete(`/puppies/${this.editPuppy.id}`).then((response) => {
+        this.$router.push(`/puppies`);
+      });
     },
   },
 };
