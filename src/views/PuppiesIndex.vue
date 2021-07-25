@@ -6,6 +6,7 @@
       <p> Name: {{ puppy.name }} </p>
       <p> Age (years): {{ puppy.age }} </p>
       <p> Breed: {{ puppy.breed }} </p>
+      <a v-bind:href="`/puppies/${puppy.id}`"> More Info </a>
       <hr />
     </div>
 
@@ -31,7 +32,7 @@ export default {
   },
   methods: {
     puppiesIndex: function () {
-      axios.get("http://localhost:3000/puppies").then((response) => {
+      axios.get("/puppies").then((response) => {
         this.puppies = response.data;
       });
     },
